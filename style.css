@@ -53,15 +53,42 @@ h1{
 }
 
 /* Video */
+/* ===== FIX VIDEO MÓVIL (sobrescribe lo anterior) ===== */
+
+.container{
+  overflow:hidden; /* evita que el video "se salga" del borde redondeado */
+}
+
 .video-wrapper{
   width:100%;
   max-width:720px;
-  aspect-ratio:16/9;
   margin:0 auto 40px auto;
   border-radius:16px;
   overflow:hidden;
-  border:1px solid var(--hairline);
+  border:1px solid rgba(0,0,0,.12);
+  aspect-ratio:auto; /* quita el 16/9 fijo */
 }
+
+.video-wrapper video{
+  width:100%;
+  height:auto;       /* clave: no 100% */
+  display:block;
+  object-fit:contain; /* para vídeo vertical: no recorta */
+}
+
+/* Móvil */
+@media (max-width:600px){
+  .video-wrapper{
+    max-width:100%;
+    border-radius:12px;
+    margin-bottom:28px;
+  }
+
+  .video-wrapper video{
+    max-height:60vh; /* evita que se coma la pantalla */
+  }
+}
+
 
 /* Etiquetas pequeñas */
 .label{
