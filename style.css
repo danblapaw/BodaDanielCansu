@@ -141,9 +141,27 @@ h1{
     width:80%;
   }
 }
+.video-wrapper{
+  width:100%;
+  max-width:720px;
+  margin:0 auto 40px auto;
+  aspect-ratio:16/9;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.12);
+}
+
 .video-wrapper video{
   width:100%;
-  height:auto;
-  border-radius:16px;
+  height:100%;
   display:block;
+  object-fit:cover; /* mantiene el encuadre sin deformar */
 }
+@media (max-width:600px){
+  .video-wrapper{
+    max-width:100%;
+    border-radius:12px;
+    margin-bottom:28px;
+  }
+}
+
