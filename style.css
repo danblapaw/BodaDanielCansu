@@ -142,6 +142,28 @@ h1{
     max-height:60vh;
   }
 }
+/* ===== Selector idioma ===== */
+.lang-switch{
+  text-align:right;
+  font-size:14px;
+  letter-spacing:.15em;
+  margin-bottom:20px;
+}
+
+.lang-switch a{
+  text-decoration:none;
+  color:var(--muted);
+  transition:opacity .2s ease;
+}
+
+.lang-switch a:hover{
+  opacity:.6;
+}
+
+.lang-switch span{
+  margin:0 6px;
+  color:var(--muted);
+}
 
 
 
