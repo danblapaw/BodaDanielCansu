@@ -1,207 +1,147 @@
-/* ===============================
-   BODA DE DANIEL Y CANSU
-   Estilo minimalista blanco y negro
-   =============================== */
-
 :root{
   --bg:#ffffff;
-  --fg:#000000;
-  --muted:#333333;
+  --fg:#0a0a0a;
+  --muted:#2c2c2c;
   --hairline:rgba(0,0,0,.12);
-  --hover:#000000;
+  --focus:rgba(0,0,0,.55);
 }
 
-/* Reset básico */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html,body{
-  height:100%;
-}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 
 body{
+  margin:0;
   background:var(--bg);
   color:var(--fg);
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  letter-spacing:.2px;
+}
+
+.wrap{
+  min-height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:60px 20px;
-  letter-spacing:0.5px;
+  padding:56px 18px;
 }
 
-/* Contenedor principal */
-.container{
-  width:100%;
-  max-width:900px;
-  text-align:center;
+.card{
+  width:min(860px, 100%);
+  padding:48px 28px;
   border:1px solid var(--hairline);
-  padding:60px 30px;
   border-radius:18px;
+  text-align:center;
+  overflow:hidden; /* clave para que el video no se salga */
 }
 
-/* Título */
 h1{
-  font-size:clamp(32px,5vw,60px);
+  margin:0;
+  font-size:clamp(30px, 4.2vw, 56px);
   font-weight:600;
-  letter-spacing:0.15em;
+  letter-spacing:.08em;
   text-transform:uppercase;
-  margin-bottom:40px;
-}
-
-/* Video */
-/* ===== FIX VIDEO MÓVIL (sobrescribe lo anterior) ===== */
-
-.container{
-  overflow:hidden; /* evita que el video "se salga" del borde redondeado */
+  line-height:1.05;
 }
 
 .video-wrapper{
-  width:100%;
-  max-width:720px;
-  margin:0 auto 40px auto;
+  margin:26px auto 30px;
+  width:min(720px, 100%);
+  border:1px solid var(--hairline);
   border-radius:16px;
   overflow:hidden;
-  border:1px solid rgba(0,0,0,.12);
-  aspect-ratio:auto; /* quita el 16/9 fijo */
 }
 
 .video-wrapper video{
   width:100%;
-  height:auto;       /* clave: no 100% */
+  height:auto;
   display:block;
-  object-fit:contain; /* para vídeo vertical: no recorta */
+  object-fit:contain; /* ideal para video vertical */
 }
 
-/* Móvil */
-@media (max-width:600px){
-  .video-wrapper{
-    max-width:100%;
-    border-radius:12px;
-    margin-bottom:28px;
-  }
-
-  .video-wrapper video{
-    max-height:60vh; /* evita que se coma la pantalla */
-  }
-}
-
-
-/* Etiquetas pequeñas */
 .label{
+  display:block;
   font-size:14px;
+  letter-spacing:.18em;
   text-transform:uppercase;
-  letter-spacing:0.25em;
   color:var(--muted);
   margin-bottom:10px;
-  display:block;
 }
 
-/* Fecha */
 .date{
-  font-size:clamp(22px,3vw,34px);
-  margin-bottom:30px;
+  margin:0 0 18px 0;
+  font-size:clamp(22px, 2.7vw, 34px);
   font-weight:500;
+  letter-spacing:.04em;
 }
 
-/* Lugar */
-.location{
-  font-size:clamp(16px,2vw,20px);
-  line-height:1.6;
-  max-width:700px;
-  margin:0 auto 40px auto;
+.place{
+  margin:0 auto 34px auto;
+  width:min(720px, 100%);
+  font-size:clamp(16px, 2vw, 20px);
+  line-height:1.55;
 }
 
-.location strong{
+.place .name{
   display:block;
   font-weight:600;
+  letter-spacing:.03em;
   margin-bottom:6px;
 }
 
-/* Línea divisoria */
-.divider{
-  width:60%;
-  height:1px;
-  background:var(--hairline);
-  margin:40px auto;
-}
-
-/* Botón */
-.button{
-  display:inline-block;
-  padding:14px 28px;
-  border:1px solid var(--fg);
-  border-radius:999px;
-  text-decoration:none;
-  color:var(--fg);
-  font-size:18px;
-  letter-spacing:0.08em;
-  transition:all .2s ease;
-}
-
-.button:hover{
-  background:var(--hover);
-  color:#ffffff;
-}
-
-/* Nota pequeña */
-.note{
-  margin-top:15px;
-  font-size:14px;
+.place .addr{
+  display:block;
   color:var(--muted);
 }
 
-/* Responsive */
+.divider{
+  width:min(520px, 100%);
+  height:1px;
+  background:var(--hairline);
+  margin:0 auto 26px;
+}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border:1px solid var(--fg);
+  border-radius:999px;
+  color:var(--fg);
+  text-decoration:none;
+  font-size:18px;
+  letter-spacing:.06em;
+  transition:transform .12s ease, background .12s ease, color .12s ease;
+  user-select:none;
+}
+
+.cta:hover{
+  background:var(--fg);
+  color:var(--bg);
+  transform:translateY(-1px);
+}
+
+.cta:focus{
+  outline:none;
+  box-shadow:0 0 0 4px var(--focus);
+}
+
+.note{
+  margin:14px 0 0 0;
+  font-size:14px;
+  color:var(--muted);
+  letter-spacing:.02em;
+}
+
+/* Móvil: limita altura del video para que no se vea gigante */
 @media (max-width:600px){
-  .container{
-    padding:40px 20px;
-  }
-
-  h1{
-    letter-spacing:0.1em;
-  }
-
-  .divider{
-    width:80%;
-  }
-}
-/* ===== FIX VIDEO MÓVIL (sobrescribe lo anterior) ===== */
-
-.container{
-  overflow:hidden; /* evita que el video "se salga" del borde redondeado */
-}
-
-.video-wrapper{
-  width:100%;
-  max-width:720px;
-  margin:0 auto 40px auto;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(0,0,0,.12);
-  aspect-ratio:auto; /* quita el 16/9 fijo */
-}
-
-.video-wrapper video{
-  width:100%;
-  height:auto;       /* clave: no 100% */
-  display:block;
-  object-fit:contain; /* para vídeo vertical: no recorta */
-}
-
-/* Móvil */
-@media (max-width:600px){
-  .video-wrapper{
-    max-width:100%;
-    border-radius:12px;
-    margin-bottom:28px;
-  }
+  .card{ padding:38px 20px; }
+  h1{ letter-spacing:.06em; }
 
   .video-wrapper video{
-    max-height:60vh; /* evita que se coma la pantalla */
+    max-height:60vh;
   }
 }
+
 
 
