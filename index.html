@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boda de Daniel y Cansu</title>
+
+  <!-- Fuente elegante -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --fg:#0a0a0a;
+      --muted:#2c2c2c;
+      --hairline:rgba(0,0,0,.12);
+      --focus:rgba(0,0,0,.55);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+      letter-spacing:.2px;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:56px 18px;
+    }
+
+    .card{
+      width:min(860px, 100%);
+      padding:48px 28px;
+      border:1px solid var(--hairline);
+      border-radius:18px;
+      text-align:center;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(30px, 4.2vw, 56px);
+      font-weight:600;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      line-height:1.05;
+    }
+
+    .spacer{ height:22px; }
+
+<div class="video-wrapper">
+  <video autoplay muted loop playsinline>
+    <source src="SaveTheDate.mp4" type="video/mp4">
+    Tu navegador no soporta video HTML5.
+  </video>
+</div>
+
+    .video-slot{
+      margin:26px auto 30px;
+      width:min(720px, 100%);
+      aspect-ratio:16 / 9;
+      border:1px solid var(--hairline);
+      border-radius:16px;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      color:var(--muted);
+    }
+    .video-slot small{
+      font-size:16px;
+      letter-spacing:.04em;
+    }
+
+    .label{
+      display:block;
+      font-size:14px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .date{
+      margin:0 0 18px 0;
+      font-size:clamp(22px, 2.7vw, 34px);
+      font-weight:500;
+      letter-spacing:.04em;
+    }
+
+    .place{
+      margin:0 auto 34px auto;
+      width:min(720px, 100%);
+      font-size:clamp(16px, 2vw, 20px);
+      line-height:1.55;
+      color:var(--fg);
+    }
+    .place .name{
+      display:block;
+      font-weight:600;
+      letter-spacing:.03em;
+      margin-bottom:6px;
+    }
+    .place .addr{
+      display:block;
+      color:var(--muted);
+    }
+
+    .divider{
+      width:min(520px, 100%);
+      height:1px;
+      background:var(--hairline);
+      margin:0 auto 26px;
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border:1px solid var(--fg);
+      border-radius:999px;
+      color:var(--fg);
+      text-decoration:none;
+      font-size:18px;
+      letter-spacing:.06em;
+      transition:transform .12s ease, background .12s ease, color .12s ease;
+      user-select:none;
+    }
+    .cta:hover{
+      background:var(--fg);
+      color:var(--bg);
+      transform:translateY(-1px);
+    }
+    .cta:focus{
+      outline:none;
+      box-shadow:0 0 0 4px var(--focus);
+    }
+
+    .note{
+      margin:14px 0 0 0;
+      font-size:14px;
+      color:var(--muted);
+      letter-spacing:.02em;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .cta{ transition:none; }
+      .cta:hover{ transform:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="Boda de Daniel y Cansu">
+      <h1>BODA DE DANIEL Y CANSU</h1>
+
+      <!-- VIDEO: sustituye este bloque por tu <video> o <iframe> -->
+      <div class="video-slot" aria-label="Vídeo entre título y fecha">
+        <small>Aquí irá el video</small>
+      </div>
+
+      <span class="label">Fecha</span>
+      <p class="date">11 de OCTUBRE de 2026</p>
+
+      <span class="label">Lugar</span>
+      <p class="place">
+        <span class="name">Mas de Sant Lleí</span>
+        <span class="addr">Camí de Casa Alta s/n. Ctra. Granollers a Masnou km 10, 5, 08410 Vilanova del Vallès, Barcelona</span>
+      </p>
+
+      <div class="divider" role="presentation"></div>
+
+      <a class="cta"
+         href="https://docs.google.com/forms/d/e/1FAIpQLSd_UeRB3ZHXIcEkYaIwjqg2oKYrA5Xe5bcZMa8iE6uALGVUrg/viewform?usp=publish-editor"
+         target="_blank"
+         rel="noopener noreferrer">
+        Confirmar asistencia
+      </a>
+
+      <p class="note">Enlace a formulario (Google Forms)</p>
+    </section>
+  </main>
+</body>
+</html>
